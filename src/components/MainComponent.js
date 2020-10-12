@@ -13,6 +13,7 @@ import HeaderComponent from './HeaderComponent';
 import FooterComponent from './FooterComponent'
 import HomeComponent from './HomeComponent';
 import ContactComponent from './ContactComponent';
+import AboutComponent from './AboutComponent';
 
 function MainComponent() {
 
@@ -38,6 +39,12 @@ function MainComponent() {
     );
   };
 
+  const aboutPage = () => {
+    return(
+      <AboutComponent leaders={leaders} />
+    );
+  }
+
   return (
     <div>
       <HeaderComponent />
@@ -46,7 +53,8 @@ function MainComponent() {
               <Route exact path='/menu' component={() => <MenuComponent dishes={dishes} />} />
               <Route path='/contactus' component={ContactComponent} />
               <Route path='/menu/:dishId' component={DishWithId} />
-              <Redirect to="/home" />
+              <Route path='/aboutus' component={aboutPage} />
+              {/* <Redirect to="/home" /> */}
       </Switch>
       <FooterComponent />
       
