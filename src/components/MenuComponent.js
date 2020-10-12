@@ -5,20 +5,7 @@ import {DISHES} from '../shared/dishes.js'
 import DishDetail from './DishdetailComponent';
 
     
-
-    // function RenderMenuItem ({dish}) {
-    //     return (
-    //         <Card onClick={() => setDish(dish)}>
-    //             <CardImg width="100%" src={dish.image} alt={dish.name} />
-    //             <CardImgOverlay>
-    //                 <CardTitle>{dish.name}</CardTitle>
-    //             </CardImgOverlay>
-    //         </Card>
-    //     );
-    // }
-    function onDishSelect(dishId) {
-        this.setState({ selectedDish: dishId});
-    }
+    
     
 
     const Menu = (props) => {
