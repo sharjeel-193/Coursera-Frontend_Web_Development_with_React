@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import { Card, CardImg, CardImgOverlay,
-    CardTitle } from 'reactstrap';
+    CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import {DISHES} from '../shared/dishes.js'
 import DishDetail from './DishdetailComponent';
+import {Link} from 'react-router-dom';
 
     
     
@@ -13,11 +14,14 @@ import DishDetail from './DishdetailComponent';
         const [dish, setDish] = useState(null);
         const RenderMenuItem = (dish) => {
             return (
-                <Card onClick={() => setDish(dish)}>
-                    <CardImg width="100%" src={dish.image} alt={dish.name} />
-                    <CardImgOverlay>
-                        <CardTitle>{dish.name}</CardTitle>
-                    </CardImgOverlay>
+                <Card>
+                    <Link to={`/menu/${dish.id}`}>
+                        <CardImg width="100%" src={dish.image} alt={dish.name} />
+                        <CardImgOverlay>
+                            <CardTitle>{dish.name}</CardTitle>
+                        </CardImgOverlay>
+                    </Link>
+                    
                 </Card>
             );
         }
@@ -33,10 +37,17 @@ import DishDetail from './DishdetailComponent';
         return (
             <div className="container">
                 <div className="row">
-                    {menu}
+                    <Breadcrumb>
+                        <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>Menu</BreadcrumbItem>
+                    </Breadcrumb>
+                    <div className="col-12">
+                        <h3>Menu</h3>
+                        <hr />
+                    </div>                
                 </div>
                 <div className="row">
-                    <DishDetail dish={dish}/>
+                    {menu}
                 </div>
                 
             </div>
