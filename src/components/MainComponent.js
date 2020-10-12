@@ -56,6 +56,7 @@ function MainComponent() {
               <Route path='/aboutus' component={aboutPage} />
               {/* <Redirect to="/home" /> */}
       </Switch>
+      
       <FooterComponent />
       
     </div>
