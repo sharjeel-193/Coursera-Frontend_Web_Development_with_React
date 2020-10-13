@@ -64,8 +64,8 @@ import { LocalForm, Control, Errors } from 'react-redux-form'
     const DishDetail = (props) => {
 
         const [isModalOpen, setisModalOpen] = useState(false);
-        const [rating, setRating] = useState(1);
-        const [comment, setComment] = useState('');
+        // const [rating, setRating] = useState(1);
+        // const [comment, setComment] = useState('');
 
         function toggleCommentModal(){
             setisModalOpen(!isModalOpen)

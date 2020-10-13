@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Card, CardImg, CardImgOverlay,
     CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import {DISHES} from '../shared/dishes.js'
-import DishDetail from './DishdetailComponent';
+
 import {Link} from 'react-router-dom';
 
     
@@ -11,7 +11,7 @@ import {Link} from 'react-router-dom';
 
     const Menu = (props) => {
 
-        const [dish, setDish] = useState(null);
+        // const [dish, setDish] = useState(null);
         const RenderMenuItem = (dish) => {
             return (
                 <Card>
